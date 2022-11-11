@@ -94,7 +94,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\Scripts\Game\Angel\Selecter\GetterWorldMousePosition.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
@@ -103,6 +102,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Game\Angel\AngelBacklight.cs" />
+    <Compile Include="Assets\Scripts\Game\Angel\Warrior\WarriorAngel.cs" />
+    <Compile Include="Assets\Scripts\Game\Demon\Demon.cs" />
+    <Compile Include="Assets\Scripts\Game\Angel\Worker\WorkerAngel.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\CheckerDemonNearby.cs" />
+    <Compile Include="Assets\Scripts\Game\Trigger\Trigger.cs" />
+    <Compile Include="Assets\Scripts\Game\Angel\Warrior\MovementToTarget.cs" />
+    <Compile Include="Assets\Scripts\Game\Movement\MovementByMoveTowards.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

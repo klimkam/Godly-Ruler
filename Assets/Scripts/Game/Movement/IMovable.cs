@@ -2,8 +2,8 @@ using UnityEngine;
 
 public interface IMovable
 {
+    MovementByMoveTowards MovementByMoveTowards { get; }
     Transform CurrentTransform { get;}
-    Vector3 TargetPosition { get; set; }
     float Speed { get; set; }
     void Move();
 }

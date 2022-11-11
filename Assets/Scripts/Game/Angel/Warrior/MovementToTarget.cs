@@ -1,11 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class AngelMovement : IMovable
+public class MovementToTarget : IMovable
 {
     private MovementByMoveTowards _movementByMoveTowards;
     private readonly float _range = 1;
     private bool _canMove;
-    private Vector3 _targetPosition;
+    private Transform _targetPoint;
     private float _speed;
     private Transform _currentTransform;
     public Transform CurrentTransform { get => _currentTransform; set => _currentTransform = value; }
@@ -13,12 +15,12 @@ public class AngelMovement : IMovable
     public MovementByMoveTowards MovementByMoveTowards => _movementByMoveTowards;
     public void Move()
     {
-        _movementByMoveTowards.Move(_targetPosition, _speed, _range, ref _canMove);
+        _movementByMoveTowards.Move(_targetPoint.position, _speed, _range, ref _canMove);
     }
-     public AngelMovement(Transform currentTransform, Vector3 targetPosition, float speed)
+    public MovementToTarget(Transform currentTransform, Transform target, float speed)
     {
         _currentTransform = currentTransform;
-        _targetPosition = targetPosition;
+        _targetPoint = target;
         _speed = speed;
         _canMove = true;
         _movementByMoveTowards = new MovementByMoveTowards(_currentTransform);
