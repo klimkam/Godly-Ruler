@@ -10,7 +10,7 @@ public class MovableCamera : MonoBehaviour
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private float speed;
     private readonly float _cameraZPosition = -10;
-    private readonly float _maxBorderForMousePosition = 20;
+    private readonly float _maxBorderForMousePosition = 5;
     private void Start()
     {
         _sceenHeight = Screen.height;
