@@ -93,6 +93,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Game\Angel\Angel.cs" />
+    <Compile Include="Assets\Scripts\Game\Camera\MovableCamera.cs" />
+    <Compile Include="Assets\Scripts\Game\Camera\TupleOfKey.cs" />
+    <Compile Include="Assets\Scripts\Game\Camera\ChangerSizeOfCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
