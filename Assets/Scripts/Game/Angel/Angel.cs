@@ -1,20 +1,21 @@
 using UnityEngine;
 
-public abstract class Angel : MonoBehaviour
+public abstract class Angel : Target
 {
-    [SerializeField] private float _speed = 5;
     [SerializeField] private AngelBacklight _angelBacklight;
-    private IMovable _iMovable;
+    private Vector2 _lastTargetPosition;
     public AngelBacklight AngelBacklight { get => _angelBacklight; private set => _angelBacklight = value; }
-    public IMovable IMovable { get => _iMovable; set => _iMovable = value; }
-    public float Speed { get => _speed; private set => _speed = value; }
-
     public void StartMoving(Vector3 target)
     {
-        _iMovable = new AngelMovement(transform, target, Speed);
+        _lastTargetPosition = target;
+        SetAngelMovement();
+    }
+    public void SetAngelMovement()
+    {
+        IMovable = new AngelMovement(transform, _lastTargetPosition, Speed);
     }
     private void Update()
     {
-        _iMovable?.Move();
+        IMovable?.Move();
     }
 }

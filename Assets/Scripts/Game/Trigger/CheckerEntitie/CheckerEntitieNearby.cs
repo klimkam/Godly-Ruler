@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WarriorAngel : Angel
+public class CheckerEntitieNearby : Trigger
 {
-
+   
 }

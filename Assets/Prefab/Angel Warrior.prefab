@@ -74,6 +74,9 @@ GameObject:
   - component: {fileID: 720439144542639255}
   - component: {fileID: 3650769429479459920}
   - component: {fileID: 958360195781227451}
+  - component: {fileID: 8676111087445617405}
+  - component: {fileID: 2752148249404841102}
+  - component: {fileID: 6925215760516342017}
   m_Layer: 0
   m_Name: Angel Warrior
   m_TagString: Untagged
@@ -162,7 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfe0355da059b3428d2b4d3d98608ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: {fileID: 2752148249404841102}
   _speed: 5
+  _damage: 2
   _angelBacklight: {fileID: 254455051501764314}
 --- !u!60 &958360195781227451
 PolygonCollider2D:
@@ -192,6 +197,46 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5773587}
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
+--- !u!114 &8676111087445617405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285424849179841569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3da04f0d51501248a1783b4c487adf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reloadTime: 3
+--- !u!114 &2752148249404841102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285424849179841569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d1bdcdc90d5be4a927d809e9cc3999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 8
+--- !u!114 &6925215760516342017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285424849179841569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a29821114be5bc45929ce4fb482b923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _angel: {fileID: 3650769429479459920}
+  _changerTime: {fileID: 8676111087445617405}
 --- !u!1 &7920784946412950135
 GameObject:
   m_ObjectHideFlags: 0

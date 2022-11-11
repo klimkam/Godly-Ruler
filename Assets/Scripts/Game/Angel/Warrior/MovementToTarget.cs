@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementToTarget : IMovable
 {
     private MovementByMoveTowards _movementByMoveTowards;
-    private readonly float _range = 1;
+    private readonly float _range = 0.2f;
     private bool _canMove;
     private Transform _targetPoint;
     private float _speed;

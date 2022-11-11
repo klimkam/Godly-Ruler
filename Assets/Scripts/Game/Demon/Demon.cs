@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Demon : MonoBehaviour
+public abstract class Demon : Target
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Update()
     {
-        
+        IMovable?.Move();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

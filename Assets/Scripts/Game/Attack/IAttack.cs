@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WarriorAngel : Angel
+public interface IAttack 
 {
-
+    void Attack();
+    Health Health { get; set; }
 }

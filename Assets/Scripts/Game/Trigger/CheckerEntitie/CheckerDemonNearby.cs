@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckerDemonNearby : Trigger
+public class CheckerDemonNearby : CheckerEntitieNearby
 {
     [SerializeField] private Angel _angel;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnTrigger<Demon>(collision, (demon) =>
