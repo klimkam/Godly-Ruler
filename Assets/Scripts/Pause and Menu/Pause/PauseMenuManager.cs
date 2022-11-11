@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     private static bool _gameIsPaused = false;
-
+    [SerializeField] private GameObject _pauseMenu;
     void Update()
     {
         if (Input.GetButtonDown("Cancel")) {
@@ -16,14 +16,14 @@ public class PauseMenuManager : MonoBehaviour
     private void PauseManager() {
         if (_gameIsPaused)
         {
-            gameObject.SetActive(true);
+            _pauseMenu.SetActive(true);
             Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
         }
         else {
-            gameObject.SetActive(false);
+            _pauseMenu.SetActive(false);
             Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
