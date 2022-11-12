@@ -14,6 +14,7 @@ public class DemonRanger : Demon
     }
     private void SetNewRangerAttack()
     {
+        Debug.Log("COOL!");
         IAttack = new RangerAttack(transform, _checkerAngelNearby.ClosestAngel.Health, _changerTime, _creatorBullet, _range);
     }
     private new void Update()
