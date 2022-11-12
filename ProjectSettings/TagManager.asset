@@ -44,3 +44,6 @@ TagManager:
   - name: SelectionArea
     uniqueID: 3877107409
     locked: 0
+  - name: Background
+    uniqueID: 4152909075
+    locked: 0
