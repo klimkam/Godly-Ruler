@@ -9,11 +9,11 @@ public class ChangerSizeOfCamera : MonoBehaviour
     private void Update()
     {
         float scrolling = Input.GetAxis("Mouse ScrollWheel");
-        if (scrolling > 0 && _mainCamera.orthographicSize <= _bordersForCamera.y)
+        if (scrolling < 0 && _mainCamera.orthographicSize <= _bordersForCamera.y)
         {
             _mainCamera.orthographicSize++;
         }
-        if (scrolling < 0 && _mainCamera.orthographicSize >= _bordersForCamera.x)
+        if (scrolling > 0 && _mainCamera.orthographicSize >= _bordersForCamera.x)
         {
             _mainCamera.orthographicSize--;
         }

@@ -857,7 +857,7 @@ MonoBehaviour:
     _directionForCamera: 0
     _keyCodesForMovingCamera: 61000000
   _mainCamera: {fileID: 569922352}
-  speed: 3
+  speed: 30
 --- !u!114 &569922355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,7 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263002b07af96174ca794df20bb402c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bordersForCamera: {x: 5, y: 10}
+  _bordersForCamera: {x: 5, y: 15}
   _mainCamera: {fileID: 569922352}
 --- !u!1 &620955995
 GameObject:
