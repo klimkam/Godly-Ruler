@@ -24,3 +24,4 @@ public class AngelMovement : IMovable
         _movementByMoveTowards = new MovementByMoveTowards(_currentTransform);
     }
 }
+ 
