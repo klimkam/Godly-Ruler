@@ -6,6 +6,7 @@ using System.Linq;
 public abstract class Demon : Target, IAttackableEntitie
 {
     private HumanVillage _humanVillage;
+    [SerializeField] private GameObject _miniMapDemon;
     [SerializeField] private NavMeshAgent _navMeshAgent;
     [SerializeField] private Target _sortedTarget;
     private ChangerMovement _changerMovement;
@@ -19,6 +20,7 @@ public abstract class Demon : Target, IAttackableEntitie
 
     private void Awake()
     {
+        _miniMapDemon.SetActive(true);
         ChangerMovement = new ChangerMovement(this);
         _navMeshAgent.TurnOffNavmesh();
         _navMeshAgent.speed = Speed;
