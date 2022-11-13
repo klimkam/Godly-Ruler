@@ -4,7 +4,7 @@ using System;
 public class SelecterControllableUnit: MonoBehaviour
 {
     private Vector3 _startPosition;
-    private readonly float _raduis = 0.8f;
+    private readonly float _raduis = 0.5f;
     private List<ControllableUnit> _controllableUnits = new List<ControllableUnit>();
     [SerializeField] private Camera _camera;
     public event Action<Vector3> OnSetStartPostion;
@@ -32,7 +32,7 @@ public class SelecterControllableUnit: MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             Vector3 moveToPosition = _camera.GetMouseWorldPosition();
-            List<Vector2> targetPositionList = GetPositionListAround(moveToPosition,_raduis, _controllableUnits.Count);
+            List<Vector2> targetPositionList = GetPositionListAround(moveToPosition,_raduis * _controllableUnits.Count, _controllableUnits.Count);
             int indexOfTargetPosition = 0;
             int additionalvalueOfTargetPosition = 1;
             foreach (ControllableUnit controllableUnit in _controllableUnits)

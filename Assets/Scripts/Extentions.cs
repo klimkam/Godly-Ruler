@@ -3,11 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public static class Extentions 
 {
     public static T GetRandomElementFromList<T>(this List<T> list) => list[Random.Range(0, list.Count)];
+    public static void TurnOffNavmesh(this NavMeshAgent navMeshAgent)
+    {
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
+    }
 
     public static void ChangeStateOfCanvasGroup(this CanvasGroup canvasGroup, bool isTunrOn)
     {

@@ -7,7 +7,8 @@ using UnityEngine;
 public abstract class CheckerEntitieNearby : Trigger
 {
     [SerializeField] private Target _parentTarget;
-    [SerializeField] private protected List<Target> _targets = new List<Target>();
+    [SerializeField] private float _radius = 6;
+    [SerializeField] protected List<Target> _targets = new List<Target>();
     protected Target _closestTarget;
     protected Target _previousTarget;
     protected SorterEntitiesBy _sorterEntitiesBy;
@@ -18,46 +19,75 @@ public abstract class CheckerEntitieNearby : Trigger
     private void Awake()
     {
         //TargetCreator.OnRemove += RemoveTarget;
+        StartCoroutine(FindClosestEntitie());
     }
     private void RemoveTarget()
     {
-         //_targets.RemoveAll(e => e == null);
-         SortByObject();
+        //_targets.RemoveAll(e => e == null);
+        SortByObject();
     }
-   /* private void OnTriggerEnter2D(Collider2D collision)
+    /* private void OnTriggerEnter2D(Collider2D collision)
+     {
+         OnTrigger<T>(collision, (target) =>
+         {
+             _targets.Add(target);
+         });
+         //SortByObject();
+     }*/
+
+    private IEnumerator FindClosestEntitie()
     {
-        OnTrigger<T>(collision, (target) =>
+        _closestTarget = null;
+        Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(_parentTarget.transform.position, _radius);
+        //collider2Ds.ToList().ForEach(e => TryAdd(e));
+        bool canSort = false;
+        foreach (Collider2D collider2D in collider2Ds)
         {
-            _targets.Add(target);
-        });
-        //SortByObject();
-    }*/
- 
+            if (TryAdd(collider2D))
+            {
+                canSort = true;
+            }
+        }
+        if (canSort)
+        {
+            Debug.Log("NEW ROAL!!!?!?! " + _parentTarget.name);
+            SortByObject();
+        }
+        yield return new WaitForSeconds(1);
+        StartCoroutine(FindClosestEntitie());
+    }
+    public abstract bool TryAdd(Collider2D collider2D);
     public void SortByObject()
     {
-        if (_targets.All(e=>e == null))
+        if (_targets == null)
         {
             return;
         }
         if (_targets.Count > _countOfTargets)
         {
-            _targets.Sort(delegate (Target firstAngel, Target t2)
+            _targets.Sort(delegate (Target target1, Target target2)
             {
-                return Vector3.Distance(firstAngel.transform.position, _parentTarget.transform.position).CompareTo(Vector3.Distance(t2.transform.position, _parentTarget.transform.position));
+                return Vector3.Distance(target1.transform.position, _parentTarget.transform.position).CompareTo(Vector3.Distance(target2.transform.position, _parentTarget.transform.position));
             });
             if (_sorterEntitiesBy != null)
             {
                 _targets = SortEntieits();
             }
         }
-        _closestTarget = _targets.FirstOrDefault();
-        if (_closestTarget != _previousTarget || _previousTarget == null)
+        if (_targets != null)
         {
-            OnChangeListOfTarget?.Invoke();
+            _closestTarget = _targets.FirstOrDefault();
+            if (_closestTarget != _previousTarget || _previousTarget == null)
+            {
+                OnChangeListOfTarget?.Invoke();
+            }
+            _previousTarget = _closestTarget;
         }
-        _previousTarget = _closestTarget;
+        }
+    public List<Target> SortEntieits()
+    {
+        return _sorterEntitiesBy.Sort(_targets);
     }
-    public abstract List<Target> SortEntieits();
    /* private void OnTriggerExit2D(Collider2D collision)
     {
         OnTrigger<T>(collision, (target) =>

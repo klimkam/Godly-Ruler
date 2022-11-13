@@ -4,33 +4,18 @@ using UnityEngine;
 
 public class WarriorAngel : Angel
 {
-    [SerializeField] private CheckerDemonNearby _checkerDemonNearby;
-    [SerializeField] private ChangerTime _changerTime;
-    [SerializeField] private float _range = 6;
     private void OnEnable()
     {
-        _checkerDemonNearby.SorterEntitiesBy = new SorterEntitiesByType(SortedTarget);
-        _checkerDemonNearby.OnChangeListOfTarget += SetNewRangerAttack;
+        _checkerEntitieNearby.SorterEntitiesBy = new SorterEntitiesByType(SortedTarget);
     }
-    private void SetNewRangerAttack()
+    public override void SetNewRangerAttack()
     {
-        IAttack = new MiddleAttack(_checkerDemonNearby.ClosestTarget.Health, transform, Damage, _range, _changerTime, this);
-        ChangerMovement.ChangeMovement(new MovementToTarget(transform, _checkerDemonNearby.ClosestTarget.transform, Speed));
-    }
-    private new void Update()
-    {
-        base.Update();
-        if(IAttack == null)
+        if(_reseterTimerByClick.IsCoolDown)
         {
             return;
         }
-        if (IAttack.Health != null)
-        {
-            IAttack.Attack();
-        }
-        }
-        private void OnDisable()
-    {
-        _checkerDemonNearby.OnChangeListOfTarget -= SetNewRangerAttack;
+        IAttack = new MiddleAttack(_checkerEntitieNearby.ClosestTarget.Health, transform, Damage, _range, _changerTime, this);
+        ChangerMovement.ChangeMovement(new MovementToTarget(NavMeshAgent, _checkerEntitieNearby.ClosestTarget.transform, Speed));
+        IMovable.Move();
     }
 }

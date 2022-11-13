@@ -30,4 +30,9 @@ public class ChangerTime : MonoBehaviour
             }
         }
     }
+    public void ResetTimer()
+    {
+        CurrentTime = 0;
+        IsCoolDown = true;
+    }
 }

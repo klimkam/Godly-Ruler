@@ -24,7 +24,7 @@ public class RangerAttack : IAttack
         {
             return;
         }
-        /*if (Vector2.Distance(_currentTransform.position, _health.transform.position) <= _range)
+        if (Vector2.Distance(_currentTransform.position, _health.transform.position) <= _range)
         {
            Bullet bullet = _creatorBullet.CreateBullet();
             bullet.SetTarget(_health.transform);

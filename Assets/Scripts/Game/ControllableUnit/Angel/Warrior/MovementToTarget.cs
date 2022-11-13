@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MovementToTarget : IMovable
 {
-    private MovementByMoveTowards _movementByMoveTowards;
+    private MovementByNavmech _movementByNavMech;
     private readonly float _range = 0.2f;
     private bool _canMove;
     private Transform _targetPoint;
@@ -12,17 +13,20 @@ public class MovementToTarget : IMovable
     private Transform _currentTransform;
     public Transform CurrentTransform { get => _currentTransform; set => _currentTransform = value; }
     public float Speed { get => _speed; set => _speed = value; }
-    public MovementByMoveTowards MovementByMoveTowards => _movementByMoveTowards;
+    public MovementByNavmech MovementByNavMech => _movementByNavMech;
     public void Move()
     {
-        _movementByMoveTowards.Move(_targetPoint.position, _speed, _range, ref _canMove);
+        if (_targetPoint != null)
+        {
+            _movementByNavMech.Move(_targetPoint.position, _speed, _range, ref _canMove);
+        }
     }
-    public MovementToTarget(Transform currentTransform, Transform target, float speed)
+    public MovementToTarget(NavMeshAgent navMeshAgent, Transform target, float speed)
     {
-        _currentTransform = currentTransform;
+        _currentTransform = target;
         _targetPoint = target;
         _speed = speed;
         _canMove = true;
-        _movementByMoveTowards = new MovementByMoveTowards(_currentTransform);
+        _movementByNavMech = new MovementByNavmech(navMeshAgent);
     }
 }

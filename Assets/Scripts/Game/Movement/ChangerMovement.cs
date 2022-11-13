@@ -8,6 +8,7 @@ public class ChangerMovement
     private IMovable _previousMovable;
     public void ChangeMovement(IMovable movement)
     {
+         movement?.Move();
         _previousMovable = _target.IMovable;
         _target.IMovable = movement;
     }

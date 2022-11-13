@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class WorkerAngel : Angel
 {
-    
+    public override void SetNewRangerAttack()
+    {
+
+    }
 }

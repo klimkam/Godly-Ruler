@@ -6,35 +6,14 @@ using UnityEngine;
 
 public class CheckerDemonNearby : CheckerEntitieNearby
 {
-    
-    public override List<Target> SortEntieits()
+    public override bool TryAdd(Collider2D collider2D)
     {
-        return _sorterEntitiesBy.Sort(_targets);
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        OnTrigger<Demon>(collision, (target) =>
+        if(collider2D.TryGetComponent<Demon>(out Demon demon))
         {
-            if (_targets.Contains(target) == false)
-            {
-                _targets.Add(target);
-            }
-        });
-        SortByObject();
+            _targets.Add(demon);
+            return true;
+        }
+        return false;
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        OnTrigger<Demon>(collision, (target) =>
-        {
-            if (_targets.Contains(target))
-            {
-                Debug.Log(" We EXIT DEMON! " + target);
-                _targets.Remove(target);
-            }
-            _closestTarget = null;
-            _previousTarget = null;
 
-        });
-        SortByObject();
-    }
 }

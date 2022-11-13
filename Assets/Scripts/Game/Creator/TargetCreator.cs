@@ -23,8 +23,7 @@ public class TargetCreator : Creator<Target>
         Target target = _listOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
         target.Health.OnDie -= Remove;
         _listOfCreatedPrefabs.Remove(target);
-        target.gameObject.SetActive(false);
-       // Destroy(target.gameObject);
+       Destroy(target.gameObject);
         OnRemove?.Invoke();
         FindObjectsOfType<CheckerEntitieNearby>().ToList().ForEach(e => e.SortByObject());
         /*List<CheckerDemonNearby> checkerDemonNearbies = FindObjectsOfType<CheckerDemonNearby>().ToList();

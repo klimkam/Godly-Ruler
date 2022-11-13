@@ -5,30 +5,37 @@ using UnityEngine;
 using System.Linq;
 public class CheckerAngelNearby : CheckerEntitieNearby
 {
-    public override List<Target> SortEntieits()
+
+
+    public override bool TryAdd(Collider2D collider2D)
     {
-        return _sorterEntitiesBy.Sort(_targets);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        OnTrigger<Angel>(collision, (target) =>
+        if (collider2D.TryGetComponent<Angel>(out Angel angel))
         {
-            _targets.Add(target);
-        });
-        SortByObject();
+            _targets.Add(angel);
+            return true;
+        }
+        return false;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    /*  private void OnTriggerEnter2D(Collider2D collision)
+{
+   OnTrigger<Angel>(collision, (target) =>
     {
-        OnTrigger<Angel>(collision, (target) =>
-        {
-            if (_targets.Contains(target))
-            {
-                _targets.Remove(target);
-            }
-            _closestTarget = null;
-            _previousTarget = null;
-        });
-        SortByObject();
-    }
+        _targets.Add(target);
+    });
+    SortByObject();
+}
+private void OnTriggerExit2D(Collider2D collision)
+{
+   OnTrigger<Angel>(collision, (target) =>
+   {
+       if (_targets.Contains(target))
+       {
+           _targets.Remove(target);
+       }
+       _closestTarget = null;
+       _previousTarget = null;
+   });
+   SortByObject();
+}*/
 
 }
