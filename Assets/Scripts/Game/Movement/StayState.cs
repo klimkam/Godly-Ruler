@@ -5,7 +5,7 @@ using UnityEngine;
 public class StayState : IMovable
 {
     private Transform _transform;
-    public MovementByNavmech MovementByMoveTowards => throw new System.NotImplementedException();
+    public MovementByNavmech MovementByNavMech { get; }
 
     public Transform CurrentTransform => _transform;
 

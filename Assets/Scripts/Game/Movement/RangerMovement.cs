@@ -15,7 +15,7 @@ public class RangerMovement : IMovable
     private Transform _currentTransform;
     public Transform CurrentTransform { get => _currentTransform; set => _currentTransform = value; }
     public float Speed { get => _speed; set => _speed = value; }
-    public MovementByNavmech MovementByMoveTowards => _movementByMoveTowards;
+    public MovementByNavmech MovementByNavMech => _movementByMoveTowards;
     public void Move()
     {
         int valueOfPositivity = Vector2.Distance(_currentTransform.transform.position, _targetPoint.position) < _rangeForPositiveSpeed ? -1 : 0;

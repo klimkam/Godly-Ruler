@@ -19,7 +19,7 @@ public abstract class Angel : ControllableUnit, IAttackableEntitie
         _changerMovement = new ChangerMovement(this);
         _navMeshAgent.TurnOffNavmesh();
         _navMeshAgent.speed = Speed;
-        _checkerEntitieNearby.OnChangeListOfTarget -= SetNewRangerAttack;
+        _checkerEntitieNearby.OnChangeListOfTarget += SetNewRangerAttack;
     }
     public void SetAngelMovement()
     {
@@ -34,14 +34,24 @@ public abstract class Angel : ControllableUnit, IAttackableEntitie
     public abstract void SetNewRangerAttack();
     private void Update()
     {
-        if (IAttack == null || IMovable == null)
+        Debug.Log("TY! " + IAttack);
+        if (IAttack != null )
         {
-            return;
+            
+            if (IAttack.Health != null)
+            {
+                IAttack.Attack();
+            }
         }
-        IMovable.Move();
-        if (IAttack.Health != null)
+        if (IMovable != null)
         {
-            IAttack.Attack();
+            if (IMovable.MovementByNavMech != null)
+            {
+                if (IMovable.MovementByNavMech.NavMeshAgent != null)
+                {
+                    IMovable.Move();
+                }
+            }
         }
     }
 

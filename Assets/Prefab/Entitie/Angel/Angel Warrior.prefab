@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 2752148249404841102}
-  _speed: 7
+  _speed: 14
   _damage: 10
   _controllableUnitBacklight: {fileID: 254455051501764314}
   _checkerEntitieNearby: {fileID: 7330740906042701371}

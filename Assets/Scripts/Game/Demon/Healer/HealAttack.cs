@@ -15,6 +15,7 @@ public class HealAttack : IAttack
     public Health Health { get => _health; set => _health = value; }
     public void Attack()
     {
+        Debug.Log("TRY HEAL!");
         if (_changerTime.CurrentTime > _attackTime && _canMove)
         {
             _iAttackableEntitie.ChangerMovement.SetPreviousMovement();
@@ -26,6 +27,7 @@ public class HealAttack : IAttack
         }
         if (Vector2.Distance(_currentTransform.position, _health.transform.position) <= _range)
         {
+            Debug.Log("HEAL !" + _health);
             _health.IncreaseHealth(_additionalHealth);
             _changerTime.IsCoolDown = true;
             _iAttackableEntitie.ChangerMovement.ChangeMovement(new StayState());

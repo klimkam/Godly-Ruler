@@ -13,11 +13,13 @@ public abstract class CheckerEntitieNearby : Trigger
     protected Target _previousTarget;
     protected SorterEntitiesBy _sorterEntitiesBy;
     private readonly int _countOfTargets = 1;
+    private protected TargetCreator _targetCreator;
     public Target ClosestTarget { get => _closestTarget; private set => _closestTarget = value; }
     public SorterEntitiesBy SorterEntitiesBy { get => _sorterEntitiesBy; set => _sorterEntitiesBy = value; }
     public event Action OnChangeListOfTarget;
-    private void Awake()
+    private void Start()
     {
+        _targetCreator = FindObjectOfType<TargetCreator>();
         //TargetCreator.OnRemove += RemoveTarget;
         StartCoroutine(FindClosestEntitie());
     }
@@ -34,23 +36,31 @@ public abstract class CheckerEntitieNearby : Trigger
          });
          //SortByObject();
      }*/
-
+    public abstract List<Target> Create();
     private IEnumerator FindClosestEntitie()
     {
         _closestTarget = null;
-        Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(_parentTarget.transform.position, _radius);
-        //collider2Ds.ToList().ForEach(e => TryAdd(e));
-        bool canSort = false;
-        foreach (Collider2D collider2D in collider2Ds)
+        //Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(_parentTarget.transform.position, _radius);
+         bool canSort = false;
+        List<Target> targets = Create();
+        if (targets != null)
         {
-            if (TryAdd(collider2D))
+            List<Target> currentTargets = targets.FindAll(e => Vector2.Distance(_parentTarget.transform.position, e.transform.position) < _radius);
+            if (currentTargets.Count > 0)
             {
+                _targets = currentTargets;
                 canSort = true;
             }
         }
+        //foreach (Collider2D collider2D in collider2Ds)
+        //{
+          //  if (TryAdd(collider2D))
+            //{
+            //    canSort = true;
+           // }
+       // }
         if (canSort)
         {
-            Debug.Log("NEW ROAL!!!?!?! " + _parentTarget.name);
             SortByObject();
         }
         yield return new WaitForSeconds(1);
@@ -65,10 +75,7 @@ public abstract class CheckerEntitieNearby : Trigger
         }
         if (_targets.Count > _countOfTargets)
         {
-            _targets.Sort(delegate (Target target1, Target target2)
-            {
-                return Vector3.Distance(target1.transform.position, _parentTarget.transform.position).CompareTo(Vector3.Distance(target2.transform.position, _parentTarget.transform.position));
-            });
+            _targets.SortListByDistance(transform);
             if (_sorterEntitiesBy != null)
             {
                 _targets = SortEntieits();

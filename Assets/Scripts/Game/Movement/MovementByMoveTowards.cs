@@ -9,6 +9,9 @@ public class MovementByMoveTowards : IMovable
     private Transform _currentTransform;
     public Transform CurrentTransform { get => _currentTransform; set => _currentTransform = value; }
     public float Speed { get => _speed; set => _speed = value; }
+
+    public MovementByNavmech MovementByNavMech { get; }
+
     public void Move()
     {
         _currentTransform.transform.position = Vector3.MoveTowards(_currentTransform.position, _targetPoint.position, _speed);

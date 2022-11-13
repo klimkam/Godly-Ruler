@@ -13,7 +13,7 @@ public class HumanVillage : MonoBehaviour
     public event Action OnVillagePurificationBegin;
 
     public event Action OnAngelAndDemonsNumberChange;
-
+    [SerializeField] private float _degreeOfVillage = 0; 
     private int _numberOfAngels = 0;
     private int _numberOfDevils = 0;
     private int _sanityChangeRante = 0;
@@ -60,21 +60,24 @@ public class HumanVillage : MonoBehaviour
         }
     }
 
+    public int SanityChangeRante { get => _sanityChangeRante; private set => _sanityChangeRante = value; }
+
     private void Awake()
     {
         OnAngelAndDemonsNumberChange += ActionOnAngelAndDemonsNumberChange;
+        _sanityLevel = _degreeOfVillage;
     }
 
     private void ActionOnAngelAndDemonsNumberChange() {
-        _sanityChangeRante = (_numberOfAngels > _numberOfDevils) ? (1) : (-1);
+        SanityChangeRante = (_numberOfAngels > _numberOfDevils) ? (1) : (-1);
         if (_numberOfAngels == _numberOfDevils) {
-            _sanityChangeRante = 0;
+            SanityChangeRante = 0;
         }
     }
 
     private void Update()
     {
-        if (_sanityChangeRante == 0) {
+        if (SanityChangeRante == 0) {
             return;
         }
 
@@ -87,7 +90,7 @@ public class HumanVillage : MonoBehaviour
             OnVillagePossessionBegin?.Invoke();
         }
 
-        SanityLevel += _sanityChangeRante * Time.deltaTime;
+        SanityLevel += SanityChangeRante * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

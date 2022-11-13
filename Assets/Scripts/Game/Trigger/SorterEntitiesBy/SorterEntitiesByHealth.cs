@@ -8,11 +8,14 @@ public class SorterEntitiesByHealth : SorterEntitiesBy
     {
         SorterEntitiesBy sorterEntitiesBy = new SorterEntitiesByType(_target);
         list = sorterEntitiesBy.Sort(list);
-        list.Sort(delegate (Target firstTarget, Target secondTarget)
+        if (list != null)
         {
-            return firstTarget.Health.CurrentHealth.CompareTo(secondTarget.Health.CurrentHealth);
-        });
-        return list;
+            list.Sort(delegate (Target firstTarget, Target secondTarget)
+            {
+                return firstTarget.Health.CurrentHealth.CompareTo(secondTarget.Health.CurrentHealth);
+            });
+        }
+            return list;
     }
     public SorterEntitiesByHealth(Target target)
     {
