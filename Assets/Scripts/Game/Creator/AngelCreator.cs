@@ -17,13 +17,13 @@ public class AngelCreator : Creator<Angel>
     }
     private void Remove(Health health)
     {
-        Angel angel = _listOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
+        Angel angel = ListOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
         angel.Health.OnDie -= Remove;
-        _listOfCreatedPrefabs.Remove(angel);
+        ListOfCreatedPrefabs.Remove(angel);
         Destroy(angel.gameObject, _dectroyTime);
     }
     private void OnDisable()
     {
-        _listOfCreatedPrefabs.ForEach(e => e.Health.OnDie -= Remove);
+        ListOfCreatedPrefabs.ForEach(e => e.Health.OnDie -= Remove);
     }
 }

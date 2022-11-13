@@ -34,10 +34,7 @@ public abstract class Health : MonoBehaviour
         {
             throw new InvalidOperationException();
         }
-        if (_currentHealth + additionalHealth <= _maxHealth)
-        {
-            _currentHealth += additionalHealth;
-        }
+        _currentHealth = _currentHealth + additionalHealth <= _maxHealth ? _currentHealth + additionalHealth : _maxHealth;
         OnChangeHealth?.Invoke();
         }
     }

@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class CheckerDemonNearby : CheckerEntitieNearby
 {
+    public override List<Target> Create()
+    {
+        return _targetCreator.ListOfCreatedPrefabs.Where(e => e is Demon).ToList();
+    }
+
     public override bool TryAdd(Collider2D collider2D)
     {
         if(collider2D.TryGetComponent<Demon>(out Demon demon))

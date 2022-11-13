@@ -9,6 +9,7 @@ public class TargetCreator : Creator<Target>
 {
     [SerializeField] private int _countOfAngels = 6;
     [SerializeField] private List<Transform> _points;
+    //public static List<Target> Targets = new List<Target>();
     public static event Action OnRemove;
     private void Awake()
     {
@@ -17,12 +18,14 @@ public class TargetCreator : Creator<Target>
             Target target = Create(_prefabs.GetRandomElementFromList(), _points.GetRandomElementFromList().position);
             target.Health.OnDie += Remove;
         }
+       // Targets = _listOfCreatedPrefabs;
     }
     private void Remove(Health health)
     {
-        Target target = _listOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
+        Target target = ListOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
         target.Health.OnDie -= Remove;
-        _listOfCreatedPrefabs.Remove(target);
+        ListOfCreatedPrefabs.Remove(target);
+        //Targets = _listOfCreatedPrefabs;
        Destroy(target.gameObject);
         OnRemove?.Invoke();
         FindObjectsOfType<CheckerEntitieNearby>().ToList().ForEach(e => e.SortByObject());
@@ -33,6 +36,6 @@ public class TargetCreator : Creator<Target>
     }
     private void OnDisable()
     {
-        _listOfCreatedPrefabs.ForEach(e => e.Health.OnDie -= Remove);
+        ListOfCreatedPrefabs.ForEach(e => e.Health.OnDie -= Remove);
     }
 }

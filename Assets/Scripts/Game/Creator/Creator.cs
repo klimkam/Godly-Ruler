@@ -5,7 +5,10 @@ using UnityEngine;
 public abstract class Creator<T> : MonoBehaviour where T : MonoBehaviour
 {
     [SerializeField] protected List<T> _prefabs;
-    protected List<T> _listOfCreatedPrefabs = new List<T>();
+    protected List<T> listOfCreatedPrefabs = new List<T>();
+
+    public List<T> ListOfCreatedPrefabs { get => listOfCreatedPrefabs; private  set => listOfCreatedPrefabs = value; }
+
     public T Create(T item,Vector2 vector)
     {
         T foundItem = _prefabs.Find(e => e.GetType() == item.GetType());
@@ -14,7 +17,7 @@ public abstract class Creator<T> : MonoBehaviour where T : MonoBehaviour
             return null;
         }
         T createdItem = Instantiate(foundItem, vector, Quaternion.identity);
-        _listOfCreatedPrefabs.Add(createdItem);
+        ListOfCreatedPrefabs.Add(createdItem);
         return createdItem;
     }
     }

@@ -26,17 +26,22 @@ public abstract class Demon : Target, IAttackableEntitie
     }
     private void Update()
     {
-        if(IAttack == null || IMovable == null)
+        if (IAttack != null)
         {
-            return;
+            if (IAttack.Health != null)
+            {
+                IAttack.Attack();
+            }
         }
-        if(IMovable.CurrentTransform != null)
+        if (IMovable != null)
         {
-            IMovable.Move();
-        }
-        if (IAttack.Health != null)
-        {
-            IAttack.Attack();
+            if (IMovable.MovementByNavMech != null)
+            {
+                if (IMovable.MovementByNavMech.NavMeshAgent != null)
+                {
+                    IMovable.Move();
+                }
+            }
         }
         }
     protected abstract void SetNewRangerAttack();

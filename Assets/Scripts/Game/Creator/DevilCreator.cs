@@ -17,13 +17,13 @@ public class DevilCreator : Creator<Demon>
     }
     private void Remove(Health health)
     {
-        Demon demon = _listOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
+        Demon demon = ListOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
         demon.Health.OnDie -= Remove;
-        _listOfCreatedPrefabs.Remove(demon);
+        ListOfCreatedPrefabs.Remove(demon);
         Destroy(demon.gameObject,_dectroyTime);
     }
     private void OnDisable()
     {
-        _listOfCreatedPrefabs.ForEach(e => e.Health.OnDie -= Remove);
+        ListOfCreatedPrefabs.ForEach(e => e.Health.OnDie -= Remove);
     }
 }
