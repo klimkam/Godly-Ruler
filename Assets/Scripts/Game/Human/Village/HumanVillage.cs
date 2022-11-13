@@ -19,7 +19,6 @@ public class HumanVillage : MonoBehaviour
     private int _sanityChangeRante = 0;
     private float _sanityLevel = 0;
 
-    //?? ???? ?????????? ?????????, ???? ????? ?? ????-?????? ???????
     public int NumberOfAngels
     {
         get { return _numberOfAngels; }
@@ -95,15 +94,28 @@ public class HumanVillage : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<AngelHealth>() != null)
         {
-            Debug.Log("Angel Entered The Village");
             NumberOfAngels += 1;
             OnAngelEnteringTheVillage?.Invoke();
         }
 
         if (collision.gameObject.GetComponent<DemonHealth>() != null)
         {
-            Debug.Log("Demon Entered The Village");
             NumberOfDevils += 1;
+            OnDemonEnteringTheVillage?.Invoke();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<AngelHealth>() != null)
+        {
+            NumberOfAngels -= 1;
+            OnAngelEnteringTheVillage?.Invoke();
+        }
+
+        if (collision.gameObject.GetComponent<DemonHealth>() != null)
+        {
+            NumberOfDevils -= 1;
             OnDemonEnteringTheVillage?.Invoke();
         }
     }
