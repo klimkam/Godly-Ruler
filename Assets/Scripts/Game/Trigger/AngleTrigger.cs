@@ -22,10 +22,10 @@ public class AngleTrigger : Trigger
         {
             OnTrigger<Demon>(collider2D, (demon) =>
             {
-                _angel.IAttack = new MiddleAttack(demon.Health, _angel.Damage);
-                _angel.IAttack.Attack();
-                _angel.SetAngelMovement();
-                _changerTime.IsCoolDown = true;
+                //_angel.IAttack = new MiddleAttack(demon.Health, _angel.Damage);
+                //_angel.IAttack.Attack();
+                //_angel.SetAngelMovement();
+                //_changerTime.IsCoolDown = true;
             });
         }
 

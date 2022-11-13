@@ -5,25 +5,14 @@ using UnityEngine;
 public class DemonRanger : Demon
 {
     [SerializeField] private CreatorBullet _creatorBullet;
-    [SerializeField] private CheckerAngelNearby _checkerAngelNearby;
-    [SerializeField] private ChangerTime _changerTime;
-    private float _range = 6;
     private void OnEnable()
     {
-        _checkerAngelNearby.OnChangeListOfAngels += SetNewRangerAttack;
+        _checkerEntitieNearby.SorterEntitiesBy = new SorterEntitiesByType(SortedTarget);
     }
-    private void SetNewRangerAttack()
+    protected override void SetNewRangerAttack()
     {
-        Debug.Log("COOL!");
-        //IAttack = new RangerAttack(transform, _checkerAngelNearby.ClosestAngel.Health, _changerTime, _creatorBullet, _range);
+        IAttack = new RangerAttack(transform, this, _checkerEntitieNearby.ClosestTarget.Health, _changerTime, _creatorBullet, _range);
+        ChangerMovement.ChangeMovement(new RangerMovement(NavMeshAgent, _checkerEntitieNearby.ClosestTarget.transform,Speed));
     }
-    private new void Update()
-    {
-        base.Update();
-        IAttack?.Attack();
-    }
-    private void OnDisable()
-    {
-        _checkerAngelNearby.OnChangeListOfAngels -= SetNewRangerAttack;
-    }
+  
 }

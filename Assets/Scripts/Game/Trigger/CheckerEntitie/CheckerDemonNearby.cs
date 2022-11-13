@@ -1,17 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CheckerDemonNearby : CheckerEntitieNearby
 {
-    [SerializeField] private Angel _angel;
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override bool TryAdd(Collider2D collider2D)
     {
-        OnTrigger<Demon>(collision, (demon) =>
-         {
-             _angel.IMovable = new MovementToTarget(_angel.transform,demon.transform,_angel.Speed);
-         });
+        if(collider2D.TryGetComponent<Demon>(out Demon demon))
+        {
+            _targets.Add(demon);
+            return true;
+        }
+        return false;
     }
+
 }

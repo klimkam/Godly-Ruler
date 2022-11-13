@@ -9,7 +9,7 @@ public abstract class Health : MonoBehaviour
     private float _maxHealth;
     public float MaxHealth { get => _maxHealth; private set => _maxHealth = value; }
     public float CurrentHealth { get => _currentHealth;  set => _currentHealth = value; }
-    public event Action OnDie;
+    public event Action<Health> OnDie;
     public event Action OnChangeHealth;
     private void Awake()
     {
@@ -25,7 +25,7 @@ public abstract class Health : MonoBehaviour
         OnChangeHealth?.Invoke();
         if (_currentHealth <= 0)
         {
-            OnDie?.Invoke();
+            OnDie?.Invoke(this);
         }
     }
     public void IncreaseHealth(float additionalHealth)
