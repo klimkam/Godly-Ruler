@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8265b8ce5a143b40afccec4d5cd11f1, type: 3}
+  m_Name: HumanHouseSprites
+  m_EditorClassIdentifier: 
+  _normalHumanHouse:
+  - {fileID: 807094832, guid: fbeea1365573f674288202c8c23cc6df, type: 3}
+  - {fileID: 1429867458, guid: fbeea1365573f674288202c8c23cc6df, type: 3}
+  - {fileID: -2120986872, guid: fbeea1365573f674288202c8c23cc6df, type: 3}
+  - {fileID: -1666553764, guid: fbeea1365573f674288202c8c23cc6df, type: 3}
+  _purifiedHumanHouse:
+  - {fileID: 1966437008, guid: 8fe84e1678a4d7e4b804042bfb671f6a, type: 3}
+  - {fileID: 1745924862, guid: 8fe84e1678a4d7e4b804042bfb671f6a, type: 3}
+  - {fileID: 2084700151, guid: 8fe84e1678a4d7e4b804042bfb671f6a, type: 3}
+  - {fileID: 441706262, guid: 8fe84e1678a4d7e4b804042bfb671f6a, type: 3}
+  _possessedHumanHouse:
+  - {fileID: -422037142, guid: 949e70a2a5385e54bbdebbf9a163697e, type: 3}
+  - {fileID: 1265505563, guid: 949e70a2a5385e54bbdebbf9a163697e, type: 3}
+  - {fileID: -1898765348, guid: 949e70a2a5385e54bbdebbf9a163697e, type: 3}
+  - {fileID: -6903100, guid: 949e70a2a5385e54bbdebbf9a163697e, type: 3}
