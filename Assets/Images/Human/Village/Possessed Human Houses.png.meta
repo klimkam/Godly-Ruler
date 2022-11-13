@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8fe84e1678a4d7e4b804042bfb671f6a
+guid: 949e70a2a5385e54bbdebbf9a163697e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,7 +115,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Possessed Human Houses_0
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 763
+        width: 500
+        height: 627
+      alignment: 9
+      pivot: {x: 0.4811269, y: 0.32190487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda61ad8a263d3746a08210c1cf695fe
+      internalID: -422037142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Possessed Human Houses_1
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 757
+        width: 504
+        height: 633
+      alignment: 9
+      pivot: {x: 0.5156986, y: 0.33250824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df298bebbb2d0844589513f48639a61c
+      internalID: 1265505563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Possessed Human Houses_2
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 0
+        width: 595
+        height: 708
+      alignment: 9
+      pivot: {x: 0.4654261, y: 0.30331478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1546abcf4cdfd424b9911a4fadb25b57
+      internalID: -1898765348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Possessed Human Houses_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 595
+        height: 702
+      alignment: 9
+      pivot: {x: 0.5505311, y: 0.29712537}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db11dfe54a9a764eac98a7ff0d38cd4
+      internalID: -6903100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +210,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Possessed Human Houses_1: 1265505563
+      Possessed Human Houses_3: -6903100
+      Possessed Human Houses_2: -1898765348
+      Possessed Human Houses_0: -422037142
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

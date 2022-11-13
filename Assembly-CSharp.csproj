@@ -127,6 +127,9 @@
     <Compile Include="Assets\Scripts\Game\Trigger\CheckerEntitie\CheckerEntitieNearby.cs" />
     <Compile Include="Assets\Scripts\Game\Bullet\DemonBullet.cs" />
     <Compile Include="Assets\Scripts\Game\Target\ChangerTime.cs" />
+    <Compile Include="Assets\Scripts\Game\Human\Village\VillageHouseData.cs" />
+    <Compile Include="Assets\Scripts\Game\Human\Village\VillageHouseSprite.cs" />
+    <Compile Include="Assets\Scripts\Game\Human\Village\HumanVillage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

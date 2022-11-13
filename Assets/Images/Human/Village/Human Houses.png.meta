@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 949e70a2a5385e54bbdebbf9a163697e
+guid: fbeea1365573f674288202c8c23cc6df
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,7 +115,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Human Houses_0
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 657
+        width: 485
+        height: 504
+      alignment: 9
+      pivot: {x: 0.4759735, y: 0.38988218}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fbcb3f96f445ae40acfb7c3b14ff70a
+      internalID: 807094832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human Houses_1
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 661
+        width: 485
+        height: 500
+      alignment: 9
+      pivot: {x: 0.52180177, y: 0.3916189}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e030f728701ce47a4ad3cd150375bd
+      internalID: 1429867458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human Houses_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 597
+        height: 596
+      alignment: 9
+      pivot: {x: 0.54649276, y: 0.35363483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344ed9c906fdcda4a882df62512ae09e
+      internalID: -2120986872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human Houses_3
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 0
+        width: 596
+        height: 596
+      alignment: 9
+      pivot: {x: 0.46230003, y: 0.3602878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4091ef63cbd1694c80e2c01c0318b3a
+      internalID: -1666553764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +210,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Human Houses_0: 807094832
+      Human Houses_3: -1666553764
+      Human Houses_2: -2120986872
+      Human Houses_1: 1429867458
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

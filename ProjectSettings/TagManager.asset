@@ -47,3 +47,6 @@ TagManager:
   - name: Background
     uniqueID: 4152909075
     locked: 0
+  - name: Houses
+    uniqueID: 3048624093
+    locked: 0
