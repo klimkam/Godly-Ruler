@@ -11,7 +11,7 @@ public class AngelCreator : Creator<Angel>
     {
         for(int i = 0; i < _countOfAngels; i++)
         {
-           Angel angel = Create(_prefabs.GetRandomElementFromList(), _point.position);
+           Angel angel = Create(Prefabs.GetRandomElementFromList(), _point.position);
             angel.Health.OnDie += Remove; 
         }
     }

@@ -9,7 +9,7 @@ public class SorterEntitiesByType : SorterEntitiesBy
     {
         if (list.Any(e => e.GetType() == _target.GetType()))
         {
-           return list.OrderByDescending(e => e is WarriorAngel).ToList();
+           return list.OrderByDescending(e => e.GetType() == _target.GetType()).ToList();
         }
         return null;
     }

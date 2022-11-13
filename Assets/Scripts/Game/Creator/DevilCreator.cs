@@ -11,7 +11,7 @@ public class DevilCreator : Creator<Demon>
     {
         for (int i = 0; i < _countOfAngels; i++)
         {
-            Demon demon = Create(_prefabs.GetRandomElementFromList(), _point.position);
+            Demon demon = Create(Prefabs.GetRandomElementFromList(), _point.position);
             demon.Health.OnDie += Remove;        
         }
     }

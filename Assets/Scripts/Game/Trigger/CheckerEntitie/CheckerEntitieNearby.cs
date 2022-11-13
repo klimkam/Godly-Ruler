@@ -75,10 +75,7 @@ public abstract class CheckerEntitieNearby : Trigger
         }
         if (_targets.Count > _countOfTargets)
         {
-            _targets.Sort(delegate (Target target1, Target target2)
-            {
-                return Vector3.Distance(target1.transform.position, _parentTarget.transform.position).CompareTo(Vector3.Distance(target2.transform.position, _parentTarget.transform.position));
-            });
+            _targets.SortListByDistance(transform);
             if (_sorterEntitiesBy != null)
             {
                 _targets = SortEntieits();
