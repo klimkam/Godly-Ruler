@@ -4,18 +4,25 @@ using UnityEngine;
 using System.Linq;
 public class ChangerCreator : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> _villagesForMinimap;
     [SerializeField] private List<TargetCreator> _targetCreators;
     private TargetCreator _currentTargetCreator;
     [SerializeField] private HumanVillage _humanVillage;
     private void Awake()
     {
+        TurnOn(_villagesForMinimap[1]);
         _humanVillage.OnVillagePurification += ChangeCreatorToAngel;
         _humanVillage.OnVillagePossession += ChangeCreatorToDemon;
     }
+    private void TurnOn(GameObject village)
+    {
+        _villagesForMinimap.ForEach(e => e.gameObject.SetActive(false));
+        village.SetActive(true);
+    }
     private void ChangeCreatorToAngel()
     {
-        Debug.LogError("ANGEL! ");
-         _currentTargetCreator = _targetCreators.Find(e => e.Prefabs.All(a => a is Angel));
+        TurnOn(_villagesForMinimap.FirstOrDefault());
+        _currentTargetCreator = _targetCreators.Find(e => e.Prefabs.All(a => a is Angel));
         TurnOnCreator();
     }
     private void TurnOnCreator()
@@ -25,7 +32,7 @@ public class ChangerCreator : MonoBehaviour
     }
     private void ChangeCreatorToDemon()
     {
-        Debug.LogError("DEMON! ");
+        TurnOn(_villagesForMinimap.LastOrDefault());
         _currentTargetCreator = _targetCreators.Find(e => e.Prefabs.All(a => a is Demon));
         TurnOnCreator();
     }

@@ -14,12 +14,17 @@ public class TargetCreator : Creator<Target>
     private void Awake()
     {
         _changerTime.IsCoolDown = true;
+        Create();
         _changerTime.SetReloadTime(() =>
         {
-            Target target = Create(Prefabs.GetRandomElementFromList(), _points.GetRandomElementFromList().position);
-            target.Health.OnDie += Remove;
+            Create();
             _changerTime.IsCoolDown = true;
         });
+    }
+    private void Create()
+    {
+        Target target = Create(Prefabs.GetRandomElementFromList(), _points.GetRandomElementFromList().position);
+        target.Health.OnDie += Remove;
     }
     private void Remove(Health health)
     {
