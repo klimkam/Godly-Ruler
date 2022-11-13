@@ -12,7 +12,7 @@ public class MovementByMoveTowards
             _currentTransform.position = Vector3.MoveTowards(_currentTransform.position, target, speed * Time.deltaTime);
             if (Vector2.Distance(_currentTransform.position, target) < range)
             {
-                canMove = false;
+              canMove = false;
             }
         }
     }

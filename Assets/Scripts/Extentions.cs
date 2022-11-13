@@ -7,6 +7,8 @@ using Random = UnityEngine.Random;
 
 public static class Extentions 
 {
+    public static T GetRandomElementFromList<T>(this List<T> list) => list[Random.Range(0, list.Count)];
+
     public static void ChangeStateOfCanvasGroup(this CanvasGroup canvasGroup, bool isTunrOn)
     {
         canvasGroup.interactable = isTunrOn;

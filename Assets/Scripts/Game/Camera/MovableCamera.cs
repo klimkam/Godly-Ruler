@@ -36,26 +36,14 @@ public class MovableCamera : MonoBehaviour
         {
             cameraPos.y += Move((int)PositivityOfCameraMovement.Positivity);
         }
-        transform.position = cameraPos; 
+        transform.position = cameraPos;
         MoveByKeyboard();
     }
     private void MoveByKeyboard()
     {
-        foreach (KeyCode keyCode in KeyCode.GetValues(typeof(KeyCode)))
-         {
-                if (Input.GetKey(keyCode))
-                {
-                    TupleOfKey tupleOfKey = _tupleOfKeys.Find(e => e.KeyCodesForMovingCamera.Any(a=>a == keyCode));
-                    if (tupleOfKey != null)
-                    {
-                    float speed = Move((int)tupleOfKey.PositivityOfCameraMovement);
-                    Vector2 vector = tupleOfKey.DirectionForCamera == DirectionForCamera.X ?
-                        new Vector2(transform.position.x + speed, transform.position.y) :
-                        new Vector2(transform.position.x, transform.position.y + speed);
-                    transform.position = new Vector3(vector.x, vector.y, _cameraZPosition);
-                    }
-                }
-        }
+        float vertical = Input.GetAxis("Vertical");
+        float horizonal = Input.GetAxis("Horizontal");
+        transform.position = new Vector3(horizonal * Move(1) + transform.position.x, vertical * Move(1) + transform.position.y, _cameraZPosition);
     }
     private float Move(int value)
     {

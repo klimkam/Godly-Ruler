@@ -11,6 +11,7 @@ public class ChangerTime : MonoBehaviour
     private Action OnSetTime;
 
     public bool IsCoolDown { get => _isCoolDown; set => _isCoolDown = value; }
+    public float CurrentTime { get => _currentTime; set => _currentTime = value; }
 
     public void SetReloadTime( Action action)
     {
@@ -20,10 +21,10 @@ public class ChangerTime : MonoBehaviour
     {
         if (IsCoolDown)
         {
-            _currentTime += Time.deltaTime;
-            if (_currentTime >= _reloadTime)
+            CurrentTime += Time.deltaTime;
+            if (CurrentTime >= _reloadTime)
             {
-                _currentTime = 0;
+                CurrentTime = 0;
                 IsCoolDown = false;
                 OnSetTime?.Invoke();
             }
