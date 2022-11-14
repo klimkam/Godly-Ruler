@@ -262,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3da04f0d51501248a1783b4c487adf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isCoolDown: 1
   _reloadTime: 5
 --- !u!1 &2852435357891758835
 GameObject:
@@ -843,7 +842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 8360356110214299103, guid: ee07fdc696d53884999323555f8813b1, type: 3}
   - {fileID: 3650769429479459920, guid: d53dac3e89b01494896ce51e30d48962, type: 3}
   - {fileID: 8550632329916449545, guid: b60d76d6f2a672d4590a4d4ebf76c742, type: 3}
   _countOfAngels: 6
@@ -882,7 +880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3da04f0d51501248a1783b4c487adf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isCoolDown: 1
   _reloadTime: 5
 --- !u!1 &6154160806724464237
 GameObject:
