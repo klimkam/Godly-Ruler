@@ -66,7 +66,7 @@ public abstract class Demon : Target, IAttackableEntitie
                 {
                     if(_checkerEntitieNearby.ClosestTarget != null)
                     {
-                        if (Vector2.Distance(IMovable.CurrentTransform.position,_checkerEntitieNearby.ClosestTarget.transform.position) > _rangeForChangingTarget)
+                        if (Vector2.Distance(IMovable.MovementByNavMech.NavMeshAgent.transform.position,_checkerEntitieNearby.ClosestTarget.transform.position) > _rangeForChangingTarget)
                         {
                             MoveToVillage();
                         }

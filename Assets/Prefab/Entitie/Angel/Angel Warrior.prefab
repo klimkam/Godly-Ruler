@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 167291280599916789}
   - component: {fileID: 7330740906042701371}
   - component: {fileID: 6980739435503799274}
+  - component: {fileID: 6224544625290376119}
   m_Layer: 0
   m_Name: CheckerDemonNearby
   m_TagString: Untagged
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c61ca1563eea5048826f7884cd286c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isHealer: 0
   _parentTarget: {fileID: 3650769429479459920}
   _radius: 15
   _targets: []
@@ -55,7 +57,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6232850381513929371}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -63,7 +65,21 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7.18
+  m_Radius: 0.45
+--- !u!114 &6224544625290376119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232850381513929371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a29821114be5bc45929ce4fb482b923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _angel: {fileID: 3650769429479459920}
+  _coolDown: 2
 --- !u!1 &7285424849179841569
 GameObject:
   m_ObjectHideFlags: 0
