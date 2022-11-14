@@ -156,6 +156,8 @@
     <Compile Include="Assets\Scripts\Pause and Menu\AllAudioManager.cs" />
     <Compile Include="Assets\Scripts\Game\Person\Person.cs" />
     <Compile Include="Assets\Scripts\Game\Creator\PersonCreator.cs" />
+    <Compile Include="Assets\Scripts\Pause and Menu\MuteAudio.cs" />
+    <Compile Include="Assets\Scripts\Pause and Menu\AllAudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
