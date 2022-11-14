@@ -64,7 +64,6 @@
     <Compile Include="Assets\Scripts\Game\Attack\IAttack.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\Bullet\DevilBulletTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Bullet\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Game\Creator\DevilCreator.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\SorterEntitiesBy\SorterEntitiesByType.cs" />
     <Compile Include="Assets\Scripts\Pause and Menu\Pause\PauseMenuManager.cs" />
     <Compile Include="Assets\Scripts\Game\Attack\RangerAttack.cs" />
@@ -123,7 +122,6 @@
     <Compile Include="Assets\Scripts\Game\Trigger\SorterEntitiesBy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\Bullet\AngelBulletTrigger.cs" />
-    <Compile Include="Assets\Scripts\Game\Creator\AngelCreator.cs" />
     <Compile Include="Assets\Scripts\Game\Bullet\DemonBullet.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\Bullet\BulletTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\Camera\ChangerSizeOfCamera.cs" />

@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3da04f0d51501248a1783b4c487adf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isCoolDown: 1
   _reloadTime: 5
 --- !u!1 &2852435357891758835
 GameObject:
@@ -881,6 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3da04f0d51501248a1783b4c487adf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isCoolDown: 1
   _reloadTime: 5
 --- !u!1 &6154160806724464237
 GameObject:

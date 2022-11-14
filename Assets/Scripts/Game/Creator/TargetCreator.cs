@@ -10,8 +10,9 @@ public class TargetCreator : Creator<Target>
     [SerializeField] private int _countOfAngels = 6;
     [SerializeField] private List<Transform> _points;
     [SerializeField] private ChangerTime _changerTime;
-    public static event Action OnRemove;
-    private void Awake()
+    public event Action<Target> OnRemove;
+    public event Action<Target> OnCreate;
+    private void Start()
     {
         _changerTime.IsCoolDown = true;
         Create();
@@ -24,16 +25,15 @@ public class TargetCreator : Creator<Target>
     private void Create()
     {
         Target target = Create(Prefabs.GetRandomElementFromList(), _points.GetRandomElementFromList().position);
-        target.Health.OnDie += Remove;
+        ListOfCreatedPrefabs.Add(target);
+        //target.Health.OnDie += Remove;
+        OnCreate?.Invoke(target);
     }
-    private void Remove(Health health)
+    public void Remove(Target target)
     {
-        Target target = ListOfCreatedPrefabs.Find(e => e.Health.CurrentHealth == health.CurrentHealth);
-        target.Health.OnDie -= Remove;
         ListOfCreatedPrefabs.Remove(target);
-       Destroy(target.gameObject);
-        OnRemove?.Invoke();
-        FindObjectsOfType<CheckerEntitieNearby>().ToList().ForEach(e => e.SortByObject());
+        FindObjectOfType<CollectorOfTargets>().Remove(target);
+        OnRemove?.Invoke(target);
     }
     private void OnDisable()
     {

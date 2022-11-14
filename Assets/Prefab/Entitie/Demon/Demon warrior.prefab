@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d93fc60cb53a24fb366d7e82608227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parentTarget: {fileID: 8726341343784528986, guid: 8ed3637be66e084418528907f7035d33, type: 3}
+  _parentTarget: {fileID: 6573408974602999217}
   _radius: 6
   _targets: []
 --- !u!1 &5762989946120492763
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a173bff7f3776774592ef8ea9c8c6d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 50
+  _currentHealth: 25
 --- !u!114 &8334521401006673171
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -111,9 +111,9 @@ GameObject:
   - component: {fileID: 5480563649644647501}
   - component: {fileID: 4965259160748805587}
   - component: {fileID: 1852800997541620324}
-  - component: {fileID: 5608137862338084013}
   - component: {fileID: 8360356110214299103}
   - component: {fileID: 8634907339191030610}
+  - component: {fileID: 6915997063380027058}
   m_Layer: 0
   m_Name: Angel Ranger
   m_TagString: Untagged
@@ -267,26 +267,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.31}
   m_EdgeRadius: 0
---- !u!95 &5608137862338084013
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091068025306275042}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 346e0f72523026c478300dc3ce20778d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8360356110214299103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +305,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 4623331000963313890, guid: 792d5a3bd4470904580c2eaf224eee48, type: 3}
   _shootPoint: {fileID: 5312835674680990705}
+--- !u!95 &6915997063380027058
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091068025306275042}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1266844208323515428
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c61ca1563eea5048826f7884cd286c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parentTarget: {fileID: 0}
+  _parentTarget: {fileID: 8360356110214299103}
   _radius: 15
   _targets: []
 --- !u!58 &783580557350142761

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public abstract class CheckerEntitieNearby : Trigger
 {
+    [SerializeField] private bool _isHealer = false;
     [SerializeField] private Target _parentTarget;
     [SerializeField] private float _radius = 6;
     [SerializeField] protected List<Target> _targets = new List<Target>();
@@ -13,13 +14,17 @@ public abstract class CheckerEntitieNearby : Trigger
     protected Target _previousTarget;
     protected SorterEntitiesBy _sorterEntitiesBy;
     private readonly int _countOfTargets = 1;
-    private protected TargetCreator _targetCreator;
+    private protected CollectorOfTargets _collectorOfTargets;
+    private List<Target> _listOfCreatedTargets;
     public Target ClosestTarget { get => _closestTarget; private set => _closestTarget = value; }
     public SorterEntitiesBy SorterEntitiesBy { get => _sorterEntitiesBy; set => _sorterEntitiesBy = value; }
+    public List<Target> ListOfCreatedTargets { get => _listOfCreatedTargets; set => _listOfCreatedTargets = value; }
+
     public event Action OnChangeListOfTarget;
     private void Start()
     {
-        _targetCreator = FindObjectOfType<TargetCreator>();
+        _collectorOfTargets = FindObjectOfType<CollectorOfTargets>();
+       // _targetCreator = FindObjectOfType<TargetCreator>();
         //TargetCreator.OnRemove += RemoveTarget;
         StartCoroutine(FindClosestEntitie());
     }
@@ -39,32 +44,44 @@ public abstract class CheckerEntitieNearby : Trigger
     public abstract List<Target> Create();
     private IEnumerator FindClosestEntitie()
     {
+        FindClosest();
+        yield return new WaitForSeconds(1);
+        StartCoroutine(FindClosestEntitie());
+    }
+    public void FindClosest()
+    {
         _closestTarget = null;
         //Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(_parentTarget.transform.position, _radius);
-         bool canSort = false;
+        bool canSort = false;
         List<Target> targets = Create();
+        if (_isHealer)
+        {
+            targets.Remove(_parentTarget);
+        }
         if (targets != null)
         {
-            List<Target> currentTargets = targets.FindAll(e => Vector2.Distance(_parentTarget.transform.position, e.transform.position) < _radius);
-            if (currentTargets.Count > 0)
-            {
-                _targets = currentTargets;
-                canSort = true;
-            }
+                List<Target> currentTargets = targets.FindAll(e => Vector2.Distance(_parentTarget.transform.position, e.transform.position) < _radius);
+                if (currentTargets != null)
+                {
+                     if (currentTargets.Count > 0)
+                   {
+                    _targets = currentTargets;
+                    canSort = true;
+
+                   }
+                }
         }
         //foreach (Collider2D collider2D in collider2Ds)
         //{
-          //  if (TryAdd(collider2D))
-            //{
-            //    canSort = true;
-           // }
-       // }
+        //  if (TryAdd(collider2D))
+        //{
+        //    canSort = true;
+        // }
+        // }
         if (canSort)
         {
             SortByObject();
         }
-        yield return new WaitForSeconds(1);
-        StartCoroutine(FindClosestEntitie());
     }
     public abstract bool TryAdd(Collider2D collider2D);
     public void SortByObject()
