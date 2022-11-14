@@ -154,6 +154,8 @@
     <Compile Include="Assets\Scripts\Game\Demon\Healer\DemonHealer.cs" />
     <Compile Include="Assets\Scripts\Game\ControllableUnit\ControllableUnit.cs" />
     <Compile Include="Assets\Scripts\Game\Human\ChangerCreator.cs" />
+    <Compile Include="Assets\Scripts\Pause and Menu\MuteAudio.cs" />
+    <Compile Include="Assets\Scripts\Pause and Menu\AllAudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
