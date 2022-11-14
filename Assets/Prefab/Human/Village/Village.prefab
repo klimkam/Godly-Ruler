@@ -423,6 +423,7 @@ Transform:
   - {fileID: 8979335469357818163}
   - {fileID: 4573170298330317442}
   - {fileID: 2185727341006110916}
+  - {fileID: 8299795921484418382}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -528,6 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _degreeOfVillage: 0
+  _sanityLevel: 0
 --- !u!114 &2172458228789002561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,6 +1298,57 @@ Transform:
   m_Father: {fileID: 1696645935346005008}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8458275062610227358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8299795921484418382}
+  - component: {fileID: 7957644534031981358}
+  m_Layer: 0
+  m_Name: Village
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8299795921484418382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458275062610227358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2973365575298769360}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7957644534031981358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458275062610227358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998c4037805fda04e837cf581f62226c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 543830647371928421, guid: 64371dc40f66bab4bbbe479b865adc3f, type: 3}
+  - {fileID: 165690914852509292, guid: 96c686c39c8cf8b468bea48640833938, type: 3}
+  - {fileID: 1916014543814864228, guid: 5dd165ef14e0a8445ab888be430b565c, type: 3}
+  _humanVillage: {fileID: 2973365575298769361}
+  _targetCreator: {fileID: 5067141485419944226}
+  _bordersForCreating: {x: 0, y: 4}
 --- !u!1001 &2973365574749705296
 PrefabInstance:
   m_ObjectHideFlags: 0

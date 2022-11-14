@@ -10,6 +10,9 @@ public class TargetCreator : Creator<Target>
     [SerializeField] private int _countOfAngels = 6;
     [SerializeField] private List<Transform> _points;
     [SerializeField] private ChangerTime _changerTime;
+
+    public List<Transform> Points { get => _points; private set => _points = value; }
+
     public event Action<Target> OnRemove;
     public event Action<Target> OnCreate;
     private void Start()
@@ -24,7 +27,7 @@ public class TargetCreator : Creator<Target>
     }
     private void Create()
     {
-        Target target = Create(Prefabs.GetRandomElementFromList(), _points.GetRandomElementFromList().position);
+        Target target = Create(Prefabs.GetRandomElementFromList(), Points.GetRandomElementFromList().position);
         ListOfCreatedPrefabs.Add(target);
         //target.Health.OnDie += Remove;
         OnCreate?.Invoke(target);
