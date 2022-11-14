@@ -17,6 +17,7 @@ public class HumanVillage : MonoBehaviour
     private int _numberOfAngels = 0;
     private int _numberOfDevils = 0;
     private int _sanityChangeRante = 0;
+    [SerializeField]
     private float _sanityLevel = 0;
 
     public int NumberOfAngels
