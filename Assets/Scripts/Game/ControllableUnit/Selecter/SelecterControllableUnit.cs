@@ -7,7 +7,22 @@ public class SelecterControllableUnit: MonoBehaviour
     private readonly float _raduis = 0.5f;
     private List<ControllableUnit> _controllableUnits = new List<ControllableUnit>();
     [SerializeField] private Camera _camera;
+    [SerializeField] private CollectorOfTargets _collectorOfTargets;
     public event Action<Vector3> OnSetStartPostion;
+    private void Awake()
+    {
+        _collectorOfTargets.OnRemoveTaget += RemoveTarget; 
+    }
+    private void RemoveTarget(Target target)
+    {
+        if(target is Angel angel)
+        {
+            if (_controllableUnits.Contains(angel))
+            {
+                _controllableUnits.Remove(angel);
+            }
+            }
+        }
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -53,5 +68,9 @@ public class SelecterControllableUnit: MonoBehaviour
             positionList.Add(position);
         }
         return positionList;
+    }
+    private void OnDisable()
+    {
+        _collectorOfTargets.OnRemoveTaget -= RemoveTarget;   
     }
 }

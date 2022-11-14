@@ -36,7 +36,6 @@ public abstract class Angel : ControllableUnit, IAttackableEntitie
     public abstract void SetNewRangerAttack();
     private void Update()
     {
-        Debug.Log("TY! " + IAttack);
         if (IAttack != null )
         {
             

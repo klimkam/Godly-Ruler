@@ -14,6 +14,7 @@ public class WarriorAngel : Angel
         {
             return;
         }
+        Debug.Log("HI! I AM ANGEL WARRIOR! NOW I AM ATTACKING!");
         IAttack = new MiddleAttack(_checkerEntitieNearby.ClosestTarget.Health, transform, Damage, _range, _changerTime, this);
         ChangerMovement.ChangeMovement(new MovementToTarget(NavMeshAgent, _checkerEntitieNearby.ClosestTarget.transform, Speed));
         IMovable.Move();

@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a173bff7f3776774592ef8ea9c8c6d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 6
+  _currentHealth: 25
 --- !u!114 &6272455418598844200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 783564081325199631}
   _sortedTarget: {fileID: 8726341343784528986, guid: 8ed3637be66e084418528907f7035d33, type: 3}
   _changerTime: {fileID: 6272455418598844200}
+  _rangeForChangingTarget: 10
   _range: 6
   _checkerEntitieNearby: {fileID: 785951061070781769}
 --- !u!95 &8402547060387961293
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c61ca1563eea5048826f7884cd286c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isHealer: 1
   _parentTarget: {fileID: 3264043677085565469}
   _radius: 6
   _targets: []
@@ -530,18 +532,6 @@ PrefabInstance:
     - target: {fileID: 3507629689543112954, guid: ef7d558257b312b42a281f0e2356c857, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888179339864357269, guid: ef7d558257b312b42a281f0e2356c857, type: 3}
-      propertyPath: m_Color.b
-      value: 0.16467714
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888179339864357269, guid: ef7d558257b312b42a281f0e2356c857, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888179339864357269, guid: ef7d558257b312b42a281f0e2356c857, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef7d558257b312b42a281f0e2356c857, type: 3}

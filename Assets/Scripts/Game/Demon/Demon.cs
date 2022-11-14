@@ -12,6 +12,7 @@ public abstract class Demon : Target, IAttackableEntitie
     private ChangerMovement _changerMovement;
     private readonly float _minDemonSanityLevel = -50f;
     [SerializeField] private protected ChangerTime _changerTime;
+    [SerializeField] private float _rangeForChangingTarget = 10;
     [SerializeField] private protected float _range = 6;
     [SerializeField] private protected CheckerEntitieNearby _checkerEntitieNearby;
     public ChangerMovement ChangerMovement { get => _changerMovement; set => _changerMovement = value; }
@@ -28,6 +29,10 @@ public abstract class Demon : Target, IAttackableEntitie
     }
     private void Start()
     {
+        MoveToVillage();
+    }
+    private void MoveToVillage()
+    {
         _humanVillage = GetClosestVillage();
         ChangerMovement.ChangeMovement(new MovementToTarget(_navMeshAgent, _humanVillage.transform, Speed));
     }
@@ -35,7 +40,7 @@ public abstract class Demon : Target, IAttackableEntitie
     {
         List<HumanVillage> humanVillages = FindObjectsOfType<HumanVillage>().ToList();
         humanVillages.RemoveAll(e => e.SanityLevel <= _minDemonSanityLevel);
-        Debug.Log(humanVillages.Count + " COUNT");
+        Debug.Log("AFTEr " + humanVillages.Count);
         List<HumanVillage> sortedVillages = humanVillages.SortListByDistance(transform);
         if (sortedVillages.Any(e => e.SanityChangeRante == 0))
         {
@@ -59,6 +64,17 @@ public abstract class Demon : Target, IAttackableEntitie
             {
                 if (IMovable.MovementByNavMech.NavMeshAgent != null)
                 {
+                    if(_checkerEntitieNearby.ClosestTarget != null)
+                    {
+                        if (Vector2.Distance(IMovable.CurrentTransform.position,_checkerEntitieNearby.ClosestTarget.transform.position) > _rangeForChangingTarget)
+                        {
+                            MoveToVillage();
+                        }
+                    }
+                    if (_checkerEntitieNearby.ClosestTarget == null)
+                    {
+                        MoveToVillage();
+                    }
                     IMovable.Move();
                 }
             }

@@ -18,10 +18,13 @@ public class RangerMovement : IMovable
     public MovementByNavmech MovementByNavMech => _movementByMoveTowards;
     public void Move()
     {
-        int valueOfPositivity = Vector2.Distance(_currentTransform.transform.position, _targetPoint.position) < _rangeForPositiveSpeed ? -1 : 0;
-        _movementByMoveTowards.Move(_targetPoint.position, _speed * valueOfPositivity, _range, ref _canMove);
-   }
-    public RangerMovement(NavMeshAgent navMeshAgent, Transform target, float speed)
+        if (_targetPoint != null)
+        {
+            int valueOfPositivity = Vector2.Distance(_currentTransform.transform.position, _targetPoint.position) < _rangeForPositiveSpeed ? -1 : 0;
+            _movementByMoveTowards.Move(_targetPoint.position, _speed * valueOfPositivity, _range, ref _canMove);
+        }
+    }
+        public RangerMovement(NavMeshAgent navMeshAgent, Transform target, float speed)
     {
         _currentTransform = target;
         _navMeshAgent = navMeshAgent;

@@ -27,6 +27,7 @@ public class MiddleAttack : IAttack
         }
         if (Vector2.Distance(_currentTransform.position, _health.transform.position) <= _range)
         {
+            Debug.Log(" DAMAGE " + _damage);
             _health.DecreaseHealth(_damage);
             _changerTime.IsCoolDown = true;
             _iAttackableEntitie.ChangerMovement.ChangeMovement(new StayState());

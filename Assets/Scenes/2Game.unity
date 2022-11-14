@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5212633529065365645, guid: 08555d97115f6e14fa427c71ddeb7d2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8252109912589583307, guid: 08555d97115f6e14fa427c71ddeb7d2b, type: 3}
       propertyPath: m_Name
       value: Angel Worker

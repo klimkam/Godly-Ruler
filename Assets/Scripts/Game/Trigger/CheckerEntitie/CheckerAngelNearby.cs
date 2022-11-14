@@ -7,7 +7,7 @@ public class CheckerAngelNearby : CheckerEntitieNearby
 {
     public override List<Target> Create()
     {
-        return _targetCreator.ListOfCreatedPrefabs.Where(e => e is Angel).ToList();
+        return _collectorOfTargets.AllTargets.Where(e => e is Angel).ToList();
     }
 
     public override bool TryAdd(Collider2D collider2D)

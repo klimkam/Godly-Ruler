@@ -10,8 +10,14 @@ public class HealerAngel : Angel
     }
     public override void SetNewRangerAttack()
     {
+        if (_reseterTimerByClick.IsCoolDown)
+        {
+            return;
+        }
         IAttack = new HealAttack(transform, this, _checkerEntitieNearby.ClosestTarget.Health, _changerTime, Damage, _range);
         ChangerMovement.ChangeMovement(new MovementToTarget(NavMeshAgent, _checkerEntitieNearby.ClosestTarget.transform, Speed));
+        IMovable.Move();
+
     }
 
 }

@@ -11,8 +11,13 @@ public class RangerAngel : Angel
     }
     public override void SetNewRangerAttack()
     {
+        if (_reseterTimerByClick.IsCoolDown)
+        {
+            return;
+        }
         IAttack = new RangerAttack(transform, this, _checkerEntitieNearby.ClosestTarget.Health, _changerTime, _creatorBullet, _range);
         ChangerMovement.ChangeMovement(new RangerMovement(NavMeshAgent, _checkerEntitieNearby.ClosestTarget.transform, Speed));
+        IMovable.Move();
     }
 
 }

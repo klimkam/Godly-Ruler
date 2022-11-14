@@ -8,7 +8,7 @@ public class CheckerDemonNearby : CheckerEntitieNearby
 {
     public override List<Target> Create()
     {
-        return _targetCreator.ListOfCreatedPrefabs.Where(e => e is Demon).ToList();
+        return _collectorOfTargets.AllTargets.Where(e => e is Demon).ToList();
     }
 
     public override bool TryAdd(Collider2D collider2D)

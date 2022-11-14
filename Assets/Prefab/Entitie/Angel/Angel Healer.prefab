@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d93fc60cb53a24fb366d7e82608227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isHealer: 1
   _parentTarget: {fileID: 8550632329916449545}
   _radius: 6
   _targets: []

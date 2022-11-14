@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ChangerTime : MonoBehaviour
 {
-    private bool _isCoolDown;
+   private bool _isCoolDown;
     private float _currentTime;
    [SerializeField]  private float _reloadTime = 5;
     private Action OnSetTime;
