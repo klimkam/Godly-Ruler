@@ -4,28 +4,25 @@ using UnityEngine;
 using System.Linq;
 using System;
 using System.Reflection;
-
 public class TargetCreator : Creator<Target>
 {
     [SerializeField] private int _countOfAngels = 6;
     [SerializeField] private List<Transform> _points;
     [SerializeField] private ChangerTime _changerTime;
-
+    private bool _isCoolDown;
+    private float _currentTime;
+    [SerializeField] private float _reloadTime = 5;
     public List<Transform> Points { get => _points; private set => _points = value; }
 
     public event Action<Target> OnRemove;
     public event Action<Target> OnCreate;
     private void Start()
     {
-        _changerTime.IsCoolDown = true;
-        Create();
-        _changerTime.SetReloadTime(() =>
-        {
-            Create();
-            _changerTime.IsCoolDown = true;
-        });
+        CreateTarget();
     }
-    private void Create()
+
+    
+    public void CreateTarget()
     {
         Target target = Create(Prefabs.GetRandomElementFromList(), Points.GetRandomElementFromList().position);
         ListOfCreatedPrefabs.Add(target);

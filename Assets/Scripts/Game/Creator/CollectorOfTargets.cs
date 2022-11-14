@@ -8,12 +8,14 @@ public class CollectorOfTargets : MonoBehaviour
     [SerializeField] private List<TargetCreator> _targetCreators = new List<TargetCreator>();
     private List<Target> _allTargets = new List<Target>();
     public List<Target> AllTargets { get => _allTargets; private set => _allTargets = value; }
+    public List<TargetCreator> TargetCreators { get => _targetCreators; private set => _targetCreators = value; }
+
     public event Action<Target> OnRemoveTaget;
     private void Awake()
     {
        // _targetCreators = FindObjectsOfType<TargetCreator>().ToList();
-        _targetCreators.ForEach(e => e.OnCreate += Add);
-        _targetCreators.ForEach(e => e.OnRemove += Remove);
+        TargetCreators.ForEach(e => e.OnCreate += Add);
+        TargetCreators.ForEach(e => e.OnRemove += Remove);
     }
     private void Add(Target target)
     {
@@ -35,7 +37,7 @@ public class CollectorOfTargets : MonoBehaviour
     }
     private void OnDisable()
     {
-        _targetCreators.ForEach(e => e.OnCreate -= Add);
-        _targetCreators.ForEach(e => e.OnRemove -= Remove);
+        TargetCreators.ForEach(e => e.OnCreate -= Add);
+        TargetCreators.ForEach(e => e.OnRemove -= Remove);
     }
 }

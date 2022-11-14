@@ -187,7 +187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6131639547233565408}
   - component: {fileID: 6381828944244417649}
-  - component: {fileID: 5324185943529749440}
   m_Layer: 0
   m_Name: CreatorOfDemons
   m_TagString: Untagged
@@ -249,19 +248,7 @@ MonoBehaviour:
   - {fileID: 7360826939400247278}
   - {fileID: 2906465875656169747}
   - {fileID: 5027800265284227929}
-  _changerTime: {fileID: 5324185943529749440}
---- !u!114 &5324185943529749440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654009111357155439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3da04f0d51501248a1783b4c487adf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _changerTime: {fileID: 0}
   _reloadTime: 5
 --- !u!1 &2852435357891758835
 GameObject:
@@ -808,7 +795,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1671475916383435332}
   - component: {fileID: 5067141485419944226}
-  - component: {fileID: 237829840059357454}
   m_Layer: 0
   m_Name: CreatorOfAngels
   m_TagString: Untagged
@@ -846,6 +832,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 3650769429479459920, guid: d53dac3e89b01494896ce51e30d48962, type: 3}
   - {fileID: 8550632329916449545, guid: b60d76d6f2a672d4590a4d4ebf76c742, type: 3}
+  - {fileID: 8360356110214299103, guid: ee07fdc696d53884999323555f8813b1, type: 3}
   _countOfAngels: 6
   _points:
   - {fileID: 8499126341626664186}
@@ -869,19 +856,7 @@ MonoBehaviour:
   - {fileID: 7360826939400247278}
   - {fileID: 2906465875656169747}
   - {fileID: 5027800265284227929}
-  _changerTime: {fileID: 237829840059357454}
---- !u!114 &237829840059357454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6096918620401553250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3da04f0d51501248a1783b4c487adf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _changerTime: {fileID: 0}
   _reloadTime: 5
 --- !u!1 &6154160806724464237
 GameObject:

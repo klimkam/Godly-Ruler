@@ -157,6 +157,8 @@
     <Compile Include="Assets\Scripts\Pause and Menu\MuteAudio.cs" />
     <Compile Include="Assets\Scripts\Pause and Menu\AllAudioManager.cs" />
     <Compile Include="Assets\Scripts\Game\Trigger\DemonTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\General\WinCondition.cs" />
+    <Compile Include="Assets\Scripts\Game\Resources\IncreaserTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
